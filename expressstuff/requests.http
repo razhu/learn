@@ -1,0 +1,23 @@
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{"username":"ramiro", "address":"ceja"}
+
+### 
+GET http://localhost:3001/postsx
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhbWlybyIsImFkZHJlc3MiOiJjZWphIiwiaWF0IjoxNjA0NzU4MTU4LCJleHAiOjE2MDQ3NTgxODh9.qJeD42VZxeU_da6hx_j0PR6O3tpoEYaGL7M1odnfeJs
+
+### get a new token with refreshtoken
+POST http://localhost:4000/tokenx
+Content-Type: application/json
+
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhbWlybyIsImFkZHJlc3MiOiJjZWphIiwiaWF0IjoxNjA0NzU4NjYwfQ.Y8Alg3FrSVh7XDdBPsTKgpzkxV1BnuqlU_MD6C5QsKM"}
+
+### logout or delete
+DELETE http://localhost:4000/logout 
+Content-Type: application/json
+
+{
+"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhbWlybyIsImFkZHJlc3MiOiJjZWphIiwiaWF0IjoxNjA0NzU4NjYwfQ.Y8Alg3FrSVh7XDdBPsTKgpzkxV1BnuqlU_MD6C5QsKM"
+}
