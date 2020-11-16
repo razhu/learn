@@ -34,7 +34,8 @@ const FACEBOOK_APP_SECRET = '7c7d04b0e2304ff55a16d4f16946b49b';
 passport.use(new FacebookStrategy({
     clientID: FACEBOOK_APP_ID,
     clientSecret: FACEBOOK_APP_SECRET,
-    callbackURL: "/auth/facebook/callback"
+    callbackURL: "/auth/facebook/callback",
+    profileFields: ['id', 'emails', 'name'] //This
   },
   function(accessToken, refreshToken, profile, cb) {
       console.log('kdsaf profile ', profile);
@@ -43,7 +44,7 @@ passport.use(new FacebookStrategy({
 ));
 
 app.get('/auth/facebook',
-  passport.authenticate('facebook'));
+  passport.authenticate('facebook', { scope : ['email'] }));
 
 app.get('/auth/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/error' }),
